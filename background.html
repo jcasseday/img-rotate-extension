@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        /**
+         * Returns a handler which will open a new window when activated.
+         */
+        function getClickHandler() {
+            return function (info, tab1) {
+                chrome.tabs.getSelected(null, function(tab) {
+                    chrome.tabs.sendRequest(tab.id, {angle: 90}, function(response) {
+
+                    });
+                });
+            };
+        }
+        ;
+
+        /**
+         * Create a context menu which will only show up for images.
+         */
+        chrome.contextMenus.create({
+            "title" : "Rotate CW",
+            "type" : "normal",
+            "contexts" : ["image"],
+            "onclick" : getClickHandler()
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>

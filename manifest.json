@@ -1,0 +1,23 @@
+{
+    "name": "IMG Rotate",
+    "version": "1.0",
+    "description": "Use right click to rotate images on Chrome.",
+    "background_page" : "background.html",
+    "permissions" : [
+        "contextMenus",
+        "tabs",
+        "http://*/*",
+        "https://*/*"
+    ],
+    "content_scripts" : [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["jquery.min.js","jquery-rotate-min.2.1.js","contentscript.js"]
+        }
+    ],
+    "icons" : {
+        "16" : "rotate-16.png",
+        "48" : "rotate-48.png",
+        "128" : "rotate-128.png"
+    }
+}
