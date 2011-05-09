@@ -1,3 +1,6 @@
+version 1.0.2 (09/05/2011)
+- added ability to rotate images that are added to pages without other elements like <div>
+
 version 1.0.1 (09/05/2011)
 - removed dependency on jquery rotate plugin
 - added CCW rotation
