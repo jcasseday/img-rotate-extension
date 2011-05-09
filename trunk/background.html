@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script type="text/javascript" src="contentscript.js"></script>
     <script>
         /**
          * Returns a handler which will open a new window when activated.
          */
-        function getClickHandler() {
+        function rotateClockWise() {
             return function (info, tab1) {
                 chrome.tabs.getSelected(null, function(tab) {
                     chrome.tabs.sendRequest(tab.id, {angle: 90}, function(response) {
@@ -14,7 +15,17 @@
                 });
             };
         }
-        ;
+
+        function rotateCounterClockWise() {
+            return function (info, tab1) {
+                chrome.tabs.getSelected(null, function(tab) {
+                    chrome.tabs.sendRequest(tab.id, {angle: -90}, function(response) {
+
+                    });
+                });
+            };
+        }
+
 
         /**
          * Create a context menu which will only show up for images.
@@ -23,7 +34,14 @@
             "title" : "Rotate CW",
             "type" : "normal",
             "contexts" : ["image"],
-            "onclick" : getClickHandler()
+            "onclick" : rotateClockWise()
+        });
+
+        chrome.contextMenus.create({
+            "title" : "Rotate CCW",
+            "type" : "normal",
+            "contexts" : ["image"],
+            "onclick" : rotateCounterClockWise()
         });
     </script>
 </head>
