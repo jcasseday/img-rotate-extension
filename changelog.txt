@@ -1,0 +1,7 @@
+version 1.0.1 (09/05/2011)
+- removed dependency on jquery rotate plugin
+- added CCW rotation
+- added ability to rotate an image when viewed by itself on a web page
+
+version 1.0 (07/05/2011)
+- Added icons and CW rotation
