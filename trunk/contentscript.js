@@ -1,5 +1,5 @@
 var selectedImage = null;
-$("img", document.body).mousedown(function (event) {
+$("*", document.body).mousedown(function (event) {
     event.stopPropagation();
     switch (event.which) {
         case 3:
@@ -13,7 +13,12 @@ $("img", document.body).mousedown(function (event) {
 chrome.extension.onRequest.addListener(onRequest);
 
 function onRequest(request, sender, sendResponse) {
-    var degree = getCurrentRotation(request.angle);
+    var degree;
+    if (request.rotation == 'flip') {
+        degree = request.angle;
+    } else {
+        degree = getCurrentRotation(request.angle);
+    }
     selectedImage.style.webkitTransform = 'rotate(' + degree + 'deg)';
     sendResponse({}); // clean up.
 }
