@@ -1,3 +1,7 @@
+version 1.0.3 (18/05/2011)
+- added ability to rotate other elements like <div>
+- added flipping of elements upside down and upright
+
 version 1.0.2 (09/05/2011)
 - added ability to rotate images that are added to pages without other elements like <div>
 
