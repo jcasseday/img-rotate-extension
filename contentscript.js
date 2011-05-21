@@ -1,9 +1,9 @@
 var selectedImage = null;
 $("*", document.body).mousedown(function (event) {
-    event.stopPropagation();
     switch (event.which) {
         case 3:
             selectedImage = $(this).get(0);
+            event.stopPropagation();
             break;
         default:
             break;

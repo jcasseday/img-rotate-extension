@@ -1,3 +1,6 @@
+version 1.0.4 (21/05/2011)
+- fixed a bug that is breaking the drag action on google maps
+
 version 1.0.3 (18/05/2011)
 - added ability to rotate other elements like <div>
 - added flipping of elements upside down and upright
